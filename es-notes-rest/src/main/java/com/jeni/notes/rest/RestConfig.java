@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestConfig extends ResourceConfig {
     public RestConfig() {
         register(NotesEndpoint.class);
+        register(DictionaryEndpoint.class);
     }
 
     @Bean

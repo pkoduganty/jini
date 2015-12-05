@@ -33,3 +33,8 @@ POST http://localhost:8090/notes
 
 ###DELETE
 DELETE http://localhost:8090/notes/YmwH7Zp9RR-KFUgOyEptjw
+
+###WIKIPEDIA SEARCH
+http://localhost:8090/dict?term=Tea
+
+returns max 3 search results
