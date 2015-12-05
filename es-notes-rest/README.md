@@ -2,9 +2,13 @@
 JDK 8
 
 #Quick Start
+
 git clone https://github.com/pkoduganty/jini.git
+
 cd jini/es-notes-rest
+
 java -jar jeni-notes-rest-1.jar
+
 *should start tomcat and elasticsearch automatically, REST endpoint on http://localhost:8090/notes
 
 #REST Endpoints
