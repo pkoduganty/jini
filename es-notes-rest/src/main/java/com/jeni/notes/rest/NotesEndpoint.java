@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -28,6 +29,15 @@ public class NotesEndpoint {
     NotesCrudRepository repository;
     
     Gson gson=new Gson();
+    
+    @GET
+    @Path("/find")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response search(@QueryParam("term") String term, @QueryParam("rows") @DefaultValue("10") int rows) {
+    	PageRequest page = new PageRequest(0, rows);
+        return Response.ok(repository.search(term, page), MediaType.APPLICATION_JSON)
+                .header("Access-Control-Allow-Origin", "*").build();    	
+    }
     
     @GET
     @Path("{id}")

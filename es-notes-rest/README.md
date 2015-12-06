@@ -34,6 +34,9 @@ POST http://localhost:8090/notes
 ###DELETE
 DELETE http://localhost:8090/notes/YmwH7Zp9RR-KFUgOyEptjw
 
+###SEARCH
+http://localhost:8090/notes/find?term=elasticsearch&rows=10
+
 ###WIKIPEDIA SEARCH
 http://localhost:8090/dict?term=Tea
 
