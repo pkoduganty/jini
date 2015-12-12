@@ -12,6 +12,6 @@ import com.jeni.notes.domain.Note;
 public interface NotesCrudRepository extends ElasticsearchRepository<Note, String> {
 	Page<Note> findByAuthorIgnoreCase(String author, Pageable page);
 	
-	@Query("{\"bool\": {\"should\": [{\"match\": {\"title\": \"?0\" }},{ \"match\": { \"description\": \"?0\" }},{ \"match\": { \"description\": \"?0\" }}]}")
+	@Query("{\"bool\": {\"should\": [{\"match\": {\"title\": \"?0\" }},{ \"match\": { \"description\": \"?0\" }},{ \"match\": { \"description\": \"?0\" }}]}}")
 	Page<Note> search(String term, Pageable page);
 }
